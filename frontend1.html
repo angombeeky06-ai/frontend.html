@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NIT Manipur CSE Portal</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+    margin:0;
+}
+
+.login-box{
+    width:400px;
+    margin:80px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+h1,h2{
+    text-align:center;
+    color:#003366;
+}
+
+input,select,button{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    background:#003366;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+#dashboard{
+    display:none;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:15px;
+    margin:10px;
+    border-radius:8px;
+    box-shadow:0 0 5px gray;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th,td{
+    border:1px solid #ccc;
+    padding:8px;
+    text-align:center;
+}
+
+th{
+    background:#003366;
+    color:white;
+}
+</style>
+
+</head>
+<body>
+
+<div id="loginPage" class="login-box">
+
+<h1>NIT Manipur</h1>
+<h3 style="text-align:center;">
+Computer Science & Engineering Department
+</h3>
+
+<input type="text" id="username" placeholder="Username">
+
+<input type="password" id="password" placeholder="Password">
+
+<select id="role">
+<option value="">Select User Type</option>
+<option value="student">Student</option>
+<option value="staff">Staff</option>
+</select>
+
+<button onclick="login()">Login</button>
+
+<p id="message" style="text-align:center;color:red;"></p>
+
+<p>
+<b>Student:</b> student / 1234<br>
+<b>Staff:</b> staff / 1234
+</p>
+
+</div>
+
+<div id="dashboard">
+
+<h1>NIT Manipur CSE Portal</h1>
+
+<div class="card">
+<h2 id="welcome"></h2>
+</div>
+
+<div class="card">
+<h2>CO - PO Mapping</h2>
+
+<table>
+
+<tr>
+<th>CO</th>
+<th>PO1</th>
+<th>PO2</th>
+<th>PO3</th>
+<th>PO4</th>
+<th>PO5</th>
+<th>PO6</th>
+<th>PO7</th>
+<th>PO8</th>
+<th>PO9</th>
+<th>PO10</th>
+<th>PO11</th>
+<th>PO12</th>
+</tr>
+
+<tr>
+<td>CO1</td>
+<td>3</td><td>2</td><td>1</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+
+<tr>
+<td>CO2</td>
+<td>2</td><td>3</td><td>2</td><td>1</td>
+<td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+
+<tr>
+<td>CO3</td>
+<td>1</td><td>2</td><td>3</td><td>2</td>
+<td>1</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+
+</table>
+</div>
+
+<div class="card">
+<h2>Student Marks</h2>
+
+<table>
+<tr>
+<th>Roll No</th>
+<th>Name</th>
+<th>Marks</th>
+</tr>
+
+<tr>
+<td>CSE001</td>
+<td>John</td>
+<td>85</td>
+</tr>
+
+<tr>
+<td>CSE002</td>
+<td>David</td>
+<td>78</td>
+</tr>
+
+<tr>
+<td>CSE003</td>
+<td>Maria</td>
+<td>92</td>
+</tr>
+
+</table>
+</div>
+
+<div class="card">
+<h2>Attainment Report</h2>
+
+<p>CO1 Attainment : 82%</p>
+<p>CO2 Attainment : 76%</p>
+<p>CO3 Attainment : 88%</p>
+
+</div>
+
+</div>
+
+<script>
+
+function login(){
+
+let username=document.getElementById("username").value;
+let password=document.getElementById("password").value;
+let role=document.getElementById("role").value;
+
+if(role=="student" &&
+username=="student" &&
+password=="1234")
+{
+document.getElementById("loginPage").style.display="none";
+document.getElementById("dashboard").style.display="block";
+document.getElementById("welcome").innerHTML=
+"Welcome Student";
+}
+
+else if(role=="staff" &&
+username=="staff" &&
+password=="1234")
+{
+document.getElementById("loginPage").style.display="none";
+document.getElementById("dashboard").style.display="block";
+document.getElementById("welcome").innerHTML=
+"Welcome Staff";
+}
+
+else{
+document.getElementById("message").innerHTML=
+"Invalid Username or Password";
+}
+
+}
+
+</script>
+
+</body>
+</html>
